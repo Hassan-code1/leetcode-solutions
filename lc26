@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int currnum = -101;
+        int currPlace = 0;
+        int diff = 0;
+        for(auto& i : nums){
+            if(i != currnum){
+                nums[currPlace++] = i;
+                currnum = i;
+                diff++;
+            }
+        }
+        return diff;
+    }
+};
